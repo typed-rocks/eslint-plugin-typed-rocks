@@ -2,19 +2,16 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['typed-rocks'],
     rules: {
-        'typed-rocks/no-complex-types': ['warn', {
+        'typed-rocks/no-complex-types': ['error', {
             union: {
-                topLevel: Infinity,
                 inner: 3
             },
             intersection: {
-                topLevel: 6,
-                inner: 3
+                // inner: 3
             },
             depth: 3,
-            unionAndIntersections: {
-                topLevel: 6,
-                inner: 4
+            combined: {
+                // inner: 3
             }
         }],
     },

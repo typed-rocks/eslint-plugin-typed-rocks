@@ -1,13 +1,13 @@
 {
   "name": "eslint-plugin-typed-rocks",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js"
   },
   "license": "MIT",
-  "keywords": ["eslint"],
+  "keywords": ["eslint", "plugin"],
   "scripts": {
     "test": "jest",
     "build": "tsup && node scripts/copy-package-json.js"

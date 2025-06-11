@@ -19,10 +19,16 @@ const minimalPkg = {
   license: pkg.license,
   repository: pkg.repository,
   bugs: pkg.bugs,
-  homepage: pkg.homepage
+  homepage: pkg.homepage,
+  private: pkg.private
 };
 
 fs.writeFileSync(
   path.join(__dirname, '../dist/package.json'),
   JSON.stringify(minimalPkg, null, 2)
+);
+
+fs.writeFileSync(
+    path.join(__dirname, '../dist/README.md'),
+    fs.readFileSync('README.md').toString()
 );
