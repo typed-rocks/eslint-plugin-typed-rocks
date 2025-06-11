@@ -10,32 +10,47 @@ An ESLint plugin to enforce and simplify TypeScript type complexity in your code
   - Detects and warns about types with excessive nesting, unions, intersections, or computed properties.
   - Helps teams enforce a maximum type complexity policy.
 
-## Example
+## Example Plugin Results
 
+<table>
+
+  <tr>
+    <td>
+      
 ```ts
 // ❌ Too complex:
 // ❌ No reusable types:
 type Team = {
   region: "north" | "south" | "west" | "east";
+// ^^ Union type has too many members (4). Max allowed is 3
   members: {
     name: string;
     firstname: string;
     address: {
       street: {
-        name: A;
+        name: string;
+//      ^^^ Type is too deeply nested (4). Max allowed is 3
         nr: string;
+//      ^^ Type is too deeply nested (4). Max allowed is 3
       };
       postalCode: string;
       city: string;
     };
   }[];
 };
-
-
+```
+</td>
+<td>
+      
+```ts
 // ✅ Simpler, more maintainable
 // ✅ Reusable
 // ✅ No duplication
 type Regions = "north" | "south" | "west" | "east";
+type Team = {
+  region: Regions;
+  members: Member[];
+};
 type Member = {
   name: string;
   firstname: string;
@@ -49,11 +64,13 @@ type Member = {
   };
 };
 
-type Team = {
-  region: Regions;
-  members: Member[];
-};
 ```
+</td>
+</tr>
+</table>
+
+
+
 
 ## Installation
 
