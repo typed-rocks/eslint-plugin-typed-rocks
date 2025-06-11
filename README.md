@@ -1,6 +1,11 @@
+<div align="center">
+
+<img src="https://github.com/typed-rocks/eslint-plugin-typed-rocks/blob/main/plugin-logo.png?raw=true" width="300" height="300">
+  
 # eslint-plugin-typed-rocks
 
 An ESLint plugin to enforce and simplify TypeScript type complexity in your codebase.
+</div>
 
 ## Features
 
