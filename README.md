@@ -17,11 +17,6 @@ An ESLint plugin to enforce and simplify TypeScript type complexity in your code
 
 ## Example Plugin Results
 
-<table>
-
-  <tr>
-    <td>
-      
 ```ts
 // ❌ Too complex:
 // ❌ No reusable types:
@@ -44,9 +39,10 @@ type Team = {
   }[];
 };
 ```
-</td>
-<td>
-      
+
+
+## After
+
 ```ts
 // ✅ Simpler, more maintainable
 // ✅ Reusable
@@ -70,12 +66,6 @@ type Member = {
 };
 
 ```
-</td>
-</tr>
-</table>
-
-
-
 
 ## Installation
 
