@@ -1,6 +1,6 @@
-import noComplexTypes from "./rules/no-complex-types";
+import maxDepthRule from "./rules/max-depth";
 
 export const rules = {
-  "no-complex-types": noComplexTypes,
+  "max-depth": maxDepthRule
 };
 

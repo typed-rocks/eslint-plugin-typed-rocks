@@ -1,18 +1,8 @@
 module.exports = {
-    parser: '@typescript-eslint/parser',
-    plugins: ['typed-rocks'],
-    rules: {
-        'typed-rocks/no-complex-types': ['error', {
-            union: {
-                inner: 3
-            },
-            intersection: {
-                // inner: 3
-            },
-            depth: 3,
-            combined: {
-                // inner: 3
-            }
-        }],
-    },
+  parser: "@typescript-eslint/parser",
+  plugins: ["typed-rocks"],
+  rules: {
+    "max-depth": ["error", 3], // ESLint's built-in rule
+    "typed-rocks/max-depth": ["error", 3],
+  },
 };
