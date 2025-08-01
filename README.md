@@ -1,10 +1,12 @@
+# Enforce and simplify TypeScript type complexity in your codebase
+
 <div align="center">
 
 <img src="https://github.com/typed-rocks/eslint-plugin-typed-rocks/blob/main/plugin-logo.png?raw=true" width="300" height="300">
-  
+
 # eslint-plugin-typed-rocks
 
-An ESLint plugin to enforce and simplify TypeScript type complexity in your codebase.
+
 </div>
 
 ## Features
@@ -13,6 +15,7 @@ An ESLint plugin to enforce and simplify TypeScript type complexity in your code
   - Prevents usage of overly complex or deeply nested TypeScript types.
   - Encourages maintainable, readable, and simple type definitions.
   - Helps teams enforce a maximum type complexity policy.
+  - integrated `--fix` command to restructure and properly organize your types.
 
 ## Example Plugin Results
 
@@ -38,7 +41,7 @@ type Team = {
 ```
 
 
-## After
+## After `--fix`
 
 ```ts
 // ✅ Simpler, more maintainable
