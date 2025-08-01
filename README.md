@@ -22,21 +22,25 @@
 ```ts
 // ❌ Too complex:
 // ❌ No reusable types:
-type Team = {
-  members: {
-    name: string;
-    firstname: string;
-    address: {
-      street: {
-        name: string;
+type Teams = {
+  frontend: {
+    members: {
+      name: string;
+      age: number;
+      address: {
 //      ^^^ Type is too deeply nested (4). Max allowed is 3
-        nr: string;
-//      ^^ Type is too deeply nested (4). Max allowed is 3
+        street: string;
+        postalCode: string;
+        city: string;
+        country: string;
       };
-      postalCode: string;
-      city: string;
-    };
-  }[];
+      skills: {
+//      ^^^ Type is too deeply nested (4). Max allowed is 3
+        area: string;
+        level: number;
+      }[];
+    }[];
+  };
 };
 ```
 
@@ -47,22 +51,27 @@ type Team = {
 // ✅ Simpler, more maintainable
 // ✅ Reusable
 // ✅ No duplication
-type Regions = "north" | "south" | "west" | "east";
-type Team = {
-  region: Regions;
-  members: Member[];
-};
-type Member = {
-  name: string;
-  firstname: string;
-  address: {
-    street: {
+type Teams = {
+  frontend: {
+    members: {
       name: string;
-      nr: string;
-    };
-    postalCode: string;
-    city: string;
+      age: number;
+      address: Address;
+      skills: Skills[];
+    }[];
   };
+};
+
+type Skills = {
+  area: string;
+  level: number;
+};
+
+type Address = {
+  street: string;
+  postalCode: string;
+  city: string;
+  country: string;
 };
 
 ```

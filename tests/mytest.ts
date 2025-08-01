@@ -17,14 +17,7 @@ type Teams = {
       name: string;
       age: number;
       address: {
-        street: {
-          name: {
-            a: {
-              b: {c: string}
-            }
-          };
-          nr: string;
-        };
+        street: string;
         postalCode: string;
         city: string;
         country: string;
